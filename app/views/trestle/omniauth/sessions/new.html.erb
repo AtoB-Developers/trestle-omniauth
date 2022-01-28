@@ -1,0 +1,11 @@
+<%= hook("omniauth.login.heading") %>
+
+<% if flash[:error] -%>
+  <div class="alert alert-danger">
+    <p><%= flash[:error] %></p>
+  </div>
+<% end -%>
+
+<% @providers.each do |name| %>
+  <%= button_to "Login with #{name.to_s.titleize}", File.join(Trestle.config.path, "auth", name.to_s),  class: "btn btn-block btn-primary" %>
+<% end %>

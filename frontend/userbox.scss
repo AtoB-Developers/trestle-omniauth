@@ -1,0 +1,47 @@
+@import "~trestle/frontend/css/support";
+
+.userbox {
+  order: 99;
+  padding: 2px 0;
+
+  > a {
+    color: $body-color;
+
+    display: block;
+    padding: 2px 0;
+
+    font-weight: normal;
+    line-height: 40px;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .avatar {
+    vertical-align: top;
+    margin-left: 6px;
+  }
+
+  .dropdown-toggle {
+    &::after {
+      vertical-align: middle;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .userbox {
+    display: block;
+    position: relative;
+    z-index: 5;
+
+    .name {
+      display: none;
+    }
+
+    .avatar {
+      border: 1px solid rgba(white, 0.25);
+    }
+  }
+}
