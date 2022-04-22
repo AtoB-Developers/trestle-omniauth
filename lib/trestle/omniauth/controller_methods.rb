@@ -16,7 +16,13 @@ module Trestle
       end
 
       def login!(auth_hash)
-        session[:trestle_user] = request.env['omniauth.auth'].slice(*%w[provider uid info extra]).as_json
+        trimmed_auth = auth_hash.slice(*%w[provider uid info extra])
+
+        # Remove this complex type from omniauth-saml to prevent an infinite
+        # loop when we call as_json before storing it in the session cookie.
+        trimmed_auth['extra'].delete('response_object')
+
+        session[:trestle_user] = trimmed_auth.to_h.as_json
         @current_user = auth_hash
       end
 
