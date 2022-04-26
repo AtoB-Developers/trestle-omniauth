@@ -4,6 +4,7 @@ This is a fork of the trestle-omniauth repository, so we can:
 
 1. Update the Rails version, so we aren't locked to an older version in our backend app
 2. Make some minor changes to the UI (e.g. the Login button)
+3. Support SAML SSO with omniauth-saml
 
 This gem is fetched into the backend repo via our private RubyGems repository
 hosted by GitHub. To update the gem version:
@@ -11,7 +12,7 @@ hosted by GitHub. To update the gem version:
 * Follow [these instructions](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry)
   to create a personal access token with write capabilities and configure
   `bundler` to use it.
-* Run `gem build trestle-omniauth.gemspec`
+* Run `gem build`
 * Upload it: `gem push --key github --host https://rubygems.pkg.github.com/atob-developers trestle-omniauth-VERSION.gem` (replacing VERSION with the new version number, e.g. `0.5.0`)
 
 # Trestle::Omniauth
