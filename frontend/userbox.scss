@@ -2,13 +2,13 @@
 
 .userbox {
   order: 99;
-  padding: 2px 0;
+  padding: 0.125rem 0;
 
   > a {
     color: $body-color;
 
     display: block;
-    padding: 2px 0;
+    padding: 0.125rem 0;
 
     font-weight: normal;
     line-height: 40px;
@@ -20,7 +20,7 @@
 
   .avatar {
     vertical-align: top;
-    margin-left: 6px;
+    margin-left: 0.375rem;
   }
 
   .dropdown-toggle {

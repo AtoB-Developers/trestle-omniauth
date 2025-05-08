@@ -1,14 +1,15 @@
 .login-form {
-  .form-control, .input-group-text {
+  .input-group > * {
     background: $auth-form-control-bg;
     border: $auth-form-control-border;
+    margin-left: 0 !important;
   }
 
   .form-control {
     color: $auth-form-control-color;
-    font-size: 1.1rem;
+    font-size: 1rem;
 
-    padding: 1.75rem 0.75rem;
+    padding: 0.875rem 0.625rem;
 
     &:focus {
       outline-color: transparent;
@@ -29,20 +30,16 @@
     }
   }
 
-  .input-group-prepend {
-    margin-right: 0;
-  }
-
   .input-group-text {
     color: $auth-form-control-icon-color;
-    padding: 0.375rem 0.25rem 0.375rem 1rem;
+    padding: 0.25rem 0.25rem 0.25rem 0.875rem;
   }
 
   .btn-primary {
     box-shadow: rgba(black, 0.1) 0 0 2px;
 
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
   }
 
   .alert-danger {
@@ -50,12 +47,17 @@
   }
 
   .remember-me {
-    font-size: 0.95rem;
+    font-size: 0.8125rem;
     line-height: 1.5;
 
     padding-left: 0;
 
-    .custom-control-label {
+    .form-check-input {
+      margin-left: 1em;
+      margin-top: 0.825em;
+    }
+
+    .form-check-label {
       display: block;
       cursor: pointer;
 
@@ -67,12 +69,6 @@
 
       &:hover {
         background: opacify($auth-remember-me-bg, 0.05);
-      }
-
-      &::before,
-      &::after {
-        top: 0.175em + 0.75em;
-        left: 1.1em;
       }
     }
   }

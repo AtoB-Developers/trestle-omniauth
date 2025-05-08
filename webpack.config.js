@@ -6,7 +6,7 @@ const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 module.exports = {
   entry: {
-    bundle: path.resolve(__dirname, 'frontend/index.scss'),
+    login: path.resolve(__dirname, 'frontend/index.scss'),
     userbox: path.resolve(__dirname, 'frontend/userbox.scss')
   },
   output: {
@@ -35,7 +35,14 @@ module.exports = {
           { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader' },
           { loader: 'postcss-loader', options: { plugins: [ require('autoprefixer') ] } },
-          { loader: 'sass-loader' }
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                quietDepts: true
+              }
+            }
+          }
         ]
       }
     ]
